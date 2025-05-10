@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Character Designer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fefcea, #f1daff);
+    }
+    .color-button.active {
+      box-shadow: 0 0 0 3px rgba(0,0,0,0.2);
+    }
+    button:active {
+      transform: scale(0.95);
+    }
+    button {
+      transition: all 0.2s ease-in-out;
+    }
+    #character {
+      background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to the Character Designer GJ</h1>
+    <p class="subheading">Create your favorite character using the options below ✿</p>
+
+  </header>
+  <main>
+    <div id="customization-panel">
+      <div class="section">
+        <h3>Skin Tone</h3>
+        <div class="actions">
+          <button class="color-button" style="background-color: #FFF5F1" onclick="applySkinImage('skintone_light', this)"></button>
+          <button class="color-button" style="background-color: #F7E2D9" onclick="applySkinImage('skintone_Medium', this)"></button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Eyes</h3>
+        <div class="actions">
+          <button class="color-button" style="background-color: #5F9DBA" onclick="applyEyeImage('blue_eyes', this)"></button>
+          <button class="color-button" style="background-color: #441B13" onclick="applyEyeImage('brown_eyes', this)"></button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Hair</h3>
+        <div class="actions">
+          <button onclick="selectHairType('long')">Long Hair</button>
+          <button onclick="selectHairType('short')">Short Hair</button>
+        </div>
+        <div class="actions">
+          <button class="color-button" style="background-color: #403B36" onclick="applyHairColor('black', this)"></button>
+          <button class="color-button" style="background-color: #762C22" onclick="applyHairColor('red', this)"></button>
+          <button class="color-button" style="background-color: #D6A56D" onclick="applyHairColor('blond', this)"></button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Blouse</h3>
+        <div class="actions">
+          <button class="color-button" style="background-color: #ffb6c1" onclick="applyBlouse('blouse_pink', this)"></button>
+          <button class="color-button" style="background-color: #ffff88" onclick="applyBlouse('blouse_yellow', this)"></button>
+          <button class="color-button" style="background-color: #403B36" onclick="applyBlouse('blouse_black', this)"></button>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Skirt</h3>
+        <div class="actions">
+          <button class="color-button" style="background-color: #5F9DBA" onclick="applySkirt('skirt_blue', this)"></button>
+          <button class="color-button" style="background-color: #8BC34A" onclick="applySkirt('skirt_green', this)"></button>
+          <button class="color-button" style="background-color: #F44336" onclick="applySkirt('skirt_red', this)"></button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button onclick="resetCharacter()">Reset</button>
+        <button onclick="saveCharacterAsImage()">Save Image</button>
+      </div>
+    </div>
+
+    <div id="character">
+      <img src="assets/images/character_color.png" id="skin-layer">
+      <img src="assets/images/underwear.png" id="underwear-layer">
+      <img src="assets/images/character_outline.png" id="character-outline">
+      <img src="assets/images/Eyes_color.png" id="eyes-layer">
+      <img src="assets/images/Eyes_outline.png" id="eyes-outline">
+
+      <!-- Hair base (gray default) -->
+      <img src="assets/images/Long_hair_color.png" id="Long_hair_color" style="display:none;">
+      <img src="assets/images/Short_hair_color.png" id="Short_hair_color" style="display:none;">
+
+      <!-- Dynamic colored hair -->
+      <img id="hair-color-layer" style="display:none;">
+
+      <!-- Hair outline -->
+      <img src="assets/images/Long_hair.png" id="Long_hair_outline" style="display:none;">
+      <img src="assets/images/Short_hair.png" id="Short_hair_outline" style="display:none;">
+
+      <!-- Skirt below blouse -->
+      <img id="skirt-layer" style="display:none;">
+      <img src="assets/images/skirt.png" id="skirt-outline" style="display:none;">
+
+      <!-- Blouse above skirt -->
+      <img id="blouse-layer" style="display:none;">
+      <img src="assets/images/blouse.png" id="blouse-outline" style="display:none;">
+    </div>
+  </main>
+  <footer>
+    <p>© 2025 Character Designer Project</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
