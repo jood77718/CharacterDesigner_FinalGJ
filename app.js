@@ -6,13 +6,13 @@ function clearActiveButtons() {
 }
 
 function applySkinImage(name, btn) {
-  document.getElementById("skin-layer").src = `assets/images/${name}.png`;
+  document.getElementById("skin-layer").src = `assets/images/${name}.PNG`;
   clearActiveButtons();
   btn.classList.add("active");
 }
 
 function applyEyeImage(name, btn) {
-  document.getElementById("eyes-layer").src = `assets/images/${name}.png`;
+  document.getElementById("eyes-layer").src = `assets/images/${name}.PNG`;
   clearActiveButtons();
   btn.classList.add("active");
 }
@@ -44,7 +44,7 @@ function selectHairType(type) {
 function applyHairColor(color, btn) {
   const img = document.getElementById("hair-color-layer");
   const prefix = getSelectedHairPrefix();
-  img.src = `assets/images/${prefix}hair_${color}.png`;
+  img.src = `assets/images/${prefix}hair_${color}.PNG`;
   img.style.display = "block";
   clearActiveButtons();
   btn.classList.add("active");
@@ -57,7 +57,7 @@ function getSelectedHairPrefix() {
 
 function applyBlouse(name, btn) {
   const img = document.getElementById("blouse-layer");
-  img.src = `assets/images/${name}.png`;
+  img.src = `assets/images/${name}.PNG`;
   img.style.display = "block";
   document.getElementById("blouse-outline").style.display = "block";
   clearActiveButtons();
@@ -66,7 +66,7 @@ function applyBlouse(name, btn) {
 
 function applySkirt(name, btn) {
   const img = document.getElementById("skirt-layer");
-  img.src = `assets/images/${name}.png`;
+  img.src = `assets/images/${name}.PNG`;
   img.style.display = "block";
   document.getElementById("skirt-outline").style.display = "block";
   clearActiveButtons();
@@ -84,7 +84,7 @@ function saveCharacterAsImage() {
   }
   html2canvas(document.getElementById("character")).then((canvas) => {
     const link = document.createElement("a");
-    link.download = "my-character.png";
+    link.download = "my-character.PNG";
     link.href = canvas.toDataURL();
     link.click();
   });
