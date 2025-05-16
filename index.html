@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Character Designer</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
   <style>
     body {
       background: linear-gradient(135deg, #fefcea, #f1daff);
@@ -25,11 +26,14 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to the Character Designer GJ</h1>
-    <p class="subheading">Create your favorite character using the options below ✿</p>
-
+  <header class="header-flex">
+    <img src="assets/images/logo.png" id="logo">
+    <div class="header-text">
+      <h1>Welcome to the Character Designer</h1>
+      <p>Create your favorite character using the options below</p>
+    </div>
   </header>
+  
   <main>
     <div id="customization-panel">
       <div class="section">
@@ -91,7 +95,9 @@
       <img src="assets/images/character_outline.PNG" id="character-outline">
       <img src="assets/images/Eyes_color.PNG" id="eyes-layer">
       <img src="assets/images/Eyes_outline.PNG" id="eyes-outline">
-
+      <img src="assets/images/lips.PNG" id="lips-layer">
+      <img src="assets/images/boot.PNG" id="boot-layer">
+      
       <!-- Hair base (gray default) -->
       <img src="assets/images/Long_hair_color.PNG" id="Long_hair_color" style="display:none;">
       <img src="assets/images/Short_hair_color.PNG" id="Short_hair_color" style="display:none;">
